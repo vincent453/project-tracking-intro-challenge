@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Project tracking intro component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">  
+  <style>
+    .attribution { font-size: 18px; text-align: center;   font-family: 'Barlow', sans-serif;
+}
+    .attribution a { color: hsl(228, 45%, 44%);   line-height: 6; }
+
+
+    body{
+  font-size: 18px;
+ 
+  font-family: 'Barlow Condensed', sans-serif;
+  overflow-x: hidden; 
+
+
+
+ 
+  
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+.imageCon{
+  margin: 3rem 8rem;
+  position: absolute;
+  
+}
+
+    #top-right-block {
+    background-color:hsl(207, 33%, 95%);
+    height: 50vh;
+    width: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: auto;
+    z-index: -1;
+    border-radius: 0 0 0 80px;
+}
+
+.navList{
+ 
+  display: flex;
+  justify-content: flex-end; 
+  padding-right: 8rem ;
+  position: relative;
+  
+
+}
+.navList li{
+
+ font-size: 18px;
+  font-weight: 700;
+  margin: 2rem 14px;
+  text-transform: uppercase;
+  list-style: none;
+  
+}
+
+.dot{
+  height: 10px;
+  width: 10px;
+  background-color:hsl(240, 11%, 86%);
+  border-radius: 100%;
+  position: relative;
+  top: 7px;
+}
+.diff{
+  color: hsl(231, 7%, 65%);
+}
+.devConst{
+  
+   
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    left: 19rem;
+    top: 2rem;
+  
+}
+.device{
+  font-family: 'Barlow Condensed', sans-serif;
+
+
+}
+
+.main{
+
+  margin-left: 8rem;
+  margin-top: -26rem;
+
+
+
+
+}
+
+span.new-b {
+    border-radius: 30px;
+    padding: 5px 7px;
+    line-height: 10px;
+    font-size: 15px;
+    background-color:hsl(230, 29%, 20%);
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    margin-right: 10px;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+    font-family: 'Barlow', sans-serif;
+}
+
+.dash{
+  color: hsl(230, 29%, 20%);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 16px;
+  display: inline-block;
+}
+.f-head{
+  font-size: 4rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0 5w 0 0;
+  margin: 20px 0 20px 0;
+  color: hsl(230, 29%, 20%);
+  width: 30rem;
+  
+  
+}
+
+.s-para{
+  font-size: 1.3rem;
+  font-family: "Barlow", sans-serif;
+  font-weight: 500;
+  width: 20%;
+  margin: 40px 0 60px 0;
+  
+}
+.button-text button{
+  background-color: hsl(0, 100%, 68%);
+  border: 0;
+  padding: 19px 30px;
+  font-size: 14px;
+  font-family: 'Barlow', sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  margin-right: 20px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+button:hover{
+  background-color: hsl(0, 64%, 76%);
+  cursor: pointer;
+}
+
+.pre-text{
+  text-transform: uppercase;
+  letter-spacing: 4;
+  font-family: 'Barlow', sans-serif;
+  font-size: 16px;
+  color: #837e7e;
+
+
+}
+
+
+.bar{
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+  position: relative;
+  width: 30rem;
+
+}
+
+#ham{
+  font-size: 30px;
+  z-index: 1000;
+  cursor: pointer;
+  display: none;
+  position: relative;
+  width: 30rem;
+
+}
+@media only screen and (max-width: 650px){
+body{
+  font-size: 10px;
+  overflow-x: hidden;
+  width: 20rem;
+
+  
+}
+
+#top-right-block{
+  width: 20rem;
+  height: 25rem;
+  left: 20.6rem;
+}
+  .navList{
+  display: none;
+}
+.imageCon{
+
+  margin: 2rem 1rem;
+
+}
+.devConst{
+  width: 20rem;
+  overflow-x: hidden;
+  top: 15rem;
+}
+.device{
+ 
+
+  width: 30rem;
+  left: 10rem;
+  position: relative;
+  display: flex;
+
+}
+.mover{
+  position: relative;
+  bottom: 25rem;
+  right: 6rem;
+ 
+}
+span.new-b{
+  padding: 6px 10px;
+  font-size: 15px;
+
+}
+
+.dash{
+  font-size: 15px;
+}
+
+.f-head{
+  font-size: 3rem;
+  position: relative;
+  bottom: 25rem;
+  right: 6rem;
+ 
+  
+
+
+}
+
+.s-para{
+  bottom: 25rem;
+  position: relative;
+  width: 100%;
+  right: 6rem;
+  font-size:1.4rem;
+  
+}
+.button-text{
+  position: relative;
+  bottom: 25rem;
+  right: 6rem;
+  
+}
+.button-text button{
+ padding: 16px 40px;
+ font-size: 1rem;
+  
+}
+.pre-text{
+  font-size: 1rem;
+}
+
+  .main{
+    display: flex;
+    position: relative;
+    top: 65rem;
+    height: 0;
+    left: 1rem;
+    flex-wrap: wrap;
+    width: 30rem;
+    
+    
+  }
+  
+
+.attribution{
+  position: relative;
+top: 68rem;
+width: 30rem;
+  
+  font-size: 1rem;
+
+}
+.bar{
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  top: 2rem;
+  left: 4rem;
+}
+
+#ham{
+  display: none;
+  position: relative;
+  justify-content: flex-end;
+  top: 2rem;
+  left: 4rem;
+
+
+}
+.navList{
+  position: absolute;
+
+  
+}
+
+.navList a li{
+  margin: 1px;
+
+  font-size: 1.5rem;
+
+}
+.diff{
+  background-color:#fff;
+  /* border-top:1px solid  black; */
+  border-top-style: groove; 
+
+}
+.show{
+  display: flex;
+  padding: 10px;
+  font-size: 20px;
+  height: auto;
+  line-height: normal;
+  flex-direction: column;
+  word-spacing: 0;
+ width: 36rem;
+  background-color: #fff;
+  max-height: 24rem;
+  text-align: center;
+  margin-left: 2rem;
+outline: 1px rgb(0, 0, 0) solid;
+  margin-top: 5rem;
+
+  
+  
+  
+}
+
+
+}
+
+
+
+.navList .dot{
+  display: none;
+
+}
+  </style>
+</head>
+<body>
+  <div id="top-right-block"></div>
+  <nav>
+    <div class="imageCon">
+<img src="images/logo.svg" class="logo">
+
+</div>
+
+<ul class="navList" data-aos="fade-left">
+  <a href="#" ><li>Product</li></a>
+  <a href="#"><li> Features</li></a>
+  <a href="#"><li>Pricing</li></a>
+<li class="dot"></li>
+  <a href="#"><li class="diff">Login</li></a>
+ 
+  
+</ul>
+
+<i class="fa-solid fa-bars bar" id="bar" onclick="show()"></i>
+<i class="fa-solid fa-xmark" id="ham" onclick="Hide()"></i>
+<div class="devConst">
+<img src="images/illustration-devices.svg" class="device" data-aos="fade-left">
+</div>
+
+  </nav>
+  <div data-aos="fade-right">
+  <main class="main" >
+  <div class="mover">
+  <span class="new-b">  New</span>
+
+  <p class="dash"> Monograph Dashboard</p>
+</div>
+<h1 class="f-head">Powerful insights into your team</h1>  
+ 
+<p class="s-para">Project planning and time tracking for agile teams</p>
+<p class="button-text"> 
+<button> Schedule a demo</button>
+ 
+<span class="pre-text">to see a live preview</span>
+</p>
+
+
+  
+  <footer>
+    
+</main>
+</div>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Vincent</a>.
+    </p>
+  </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  const list = document.querySelector(".navList").classList;
+  function show(x) {
+  const bar =  document.getElementById("bar");
+  const ham = document.getElementById("ham")
+    list.add("show");
+    // alert("you have click")
+   
+    
+addEventListener("click", (event) => {
+
+  ham.style.display ="flex";
+  bar.style.display="none";
+});
+
+onclick = (event) => {
+
+};
+
+  }
+
+
+  function Hide(){
+      list.remove("show");
+      addEventListener("click", (event) => {
+
+bar.style.display ="flex";
+ham.style.display ="none";
+});
+
+onclick = (event) => {
+
+};
+
+    }
+
+
+
+    AOS.init();
+</script>
+</body>
+</html>
